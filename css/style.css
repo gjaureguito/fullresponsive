@@ -1,0 +1,341 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ecf9ff;
+}
+
+body {
+  color: #272727;
+  font-family: "Quicksand", serif;
+  font-style: normal;
+  letter-spacing: 0;
+  padding: 5px;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 35px;
+}
+
+.imagen {
+  grid-area: imagen;
+  grid-column: 1/7;
+  background-color: #f1f1f1;
+  font-size: 35px;
+  background-repeat: no-repeat;
+  background: url(/images/img_h.png);
+  background-size: cover;
+  height: 500px;
+  align-self: auto;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "imagen imagen imagen imagen imagen imagen"
+    "header header header header header header"
+    "left left middle middle right right"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.left,
+.middle,
+.right {
+  grid-column: 1 / span 7;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+.main {
+  grid-area: main;
+  grid-column: 1/7;
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-areas:
+      "imagen imagen imagen imagen imagen imagen"
+      "header header header header header header"
+      "left left left left left left"
+      "middle middle middle middle middle middle"
+      "right right right right right right"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.logo {
+  height: 300px;
+  width: 300px;
+}
+
+.div_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s1 {
+  width: 100%;
+  background-color: #353431;
+  color: white;
+  grid-column: 1 / span 7;
+  height: auto;
+  text-align: justify;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.s2 {
+  width: 100%;
+  background-color: #2065cc;
+  color: rgb(229, 235, 238);
+  grid-column: 1 / span 7;
+  height: 300px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.s3 {
+  width: 100%;
+  background-color: #c6da81;
+  color: rgb(18, 18, 19);
+  grid-column: 1 / span 7;
+  height: 300px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+
+.s4 {
+  width: 100%;
+  grid-column: 1 / span 7;
+  height: 300px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-top: 20px;
+  color: #272727;
+}
+
+
+.button {
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+a:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.img_c {
+  float: left;
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  align-self: auto;
+}
+.p_c {
+  text-align: justify;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  background-color: rgb(28, 28, 29);
+  padding: 10px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+
+
+  #container {
+    max-width: 300px;
+      /* Center the container in middle on horizontal axis */
+    margin: 0 auto;
+  
+    /* Add empty space above the container (20% of the view height) */
+    margin-top: 20vh;
+  }
+
+
+  .tag {
+    padding: 4px 8px;
+    border: 1px solid #e5eaed;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #788697;
+  }
+  
+  /* Style div elements that have class equal to name */
+  .name {
+    font-size: 24px;
+    font-weight: 600;
+  
+    margin-top: 16px;
+  }
+
+  
+  /* Style p element */
+.p-class {
+  font-size: 14px;
+  color: #7f8c9b;
+  line-height: 150%;
+}
+
+/* Style button element */
+.button-class {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+
+  font-weight: 600;
+  color: #0077ff;
+  background-color: #e0efff;
+
+  /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
+  margin: 0 auto;
+  display: block;
+
+  /* Button is a clickable element, therefore it should have a pointer cursor */
+  cursor: pointer;
+}
+
+.card__details {
+  /* Add space around the details */
+  padding: 16px 8px 8px 8px;
+}
+
+
+
+
